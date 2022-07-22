@@ -1,6 +1,6 @@
 """
 author: Jiayi Zhu
-Principal Component Analysis
+主成分分析
 """
 import numpy
 from sklearn import decomposition
@@ -9,7 +9,7 @@ from sklearn import decomposition
 class PCA:
     def __init__(self, data_, n_: int):
         """
-        Example
+        示例
         -------
         >>> data = [[2, 3, 4], [3, 6, 9]]
         >>> md = PCA(data)

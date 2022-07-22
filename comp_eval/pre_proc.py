@@ -1,4 +1,7 @@
-import math
+"""
+author: Jiayi Zhu
+指标预处理
+"""
 
 import numpy as np
 
@@ -9,7 +12,7 @@ def small_to_large(indicator_: np.ndarray):
     """
     极小型指标化为极大型指标
 
-    Example
+    示例
     -------
     >>> s = np.array([1, 3, 5, 7])
     >>> small_to_large(s)
@@ -22,7 +25,7 @@ def middle_to_large(indicator_: np.ndarray):
     """
     居中型指标化为极大型指标
 
-    Example
+    示例
     -------
     >>> m = np.array([1, 4, 5, 7, 9])
     >>> middle_to_large(m)
@@ -43,7 +46,7 @@ def interval_to_large(indicator_: np.ndarray, lb_: float, ub_: float):
     """
     区间型指标化为极大型指标
 
-    Example
+    示例
     -------
     >>> i = np.array([2, 5, 6, 10, 13])
     >>> interval_to_large(i, 5, 9)
