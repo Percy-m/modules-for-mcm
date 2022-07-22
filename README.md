@@ -7,7 +7,11 @@
 
 ```
 .
-+-- multi_analysis
-|   +-- pca.py
-+-- README.md
+├───README.md
+│
+├───comp_eval/
+│   └───pre_proc.py
+│
+└───multi_analysis/
+    └───pca.py
 ```

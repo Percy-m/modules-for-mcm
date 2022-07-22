@@ -1,20 +1,18 @@
-# utf-8 
 """
 author: Jiayi Zhu
-2022 - 07 - 19
+Principal Component Analysis
 """
+import numpy
 from sklearn import decomposition
 
 
 class PCA:
     def __init__(self, data_, n_: int):
         """
-        Example:
-
-        data = [[2, 3, 4], [3, 6, 9]]
-
-        md = PCA(data)
-
+        Example
+        -------
+        >>> data = [[2, 3, 4], [3, 6, 9]]
+        >>> md = PCA(data)
 
         :param data_: array_like
         :param n_: dimensions
@@ -49,7 +47,7 @@ class PCA:
         """
 
         :param n: 主成分的个数
-        :return:
+        :return: 前 n 个主成分
         """
         principals = []
         for m in range(n):
@@ -77,6 +75,7 @@ if __name__ == '__main__':
         [157.7, 79.0, 53.5]
     ]
 
-    f = PCA(arr, 3)
+    npa = numpy.array(arr)
+    f = PCA(npa, 3)
     f.print_all()
     print(f.get_principals(1))
