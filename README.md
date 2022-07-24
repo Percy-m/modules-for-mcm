@@ -8,10 +8,10 @@
 ```
 .
 ├───README.md
-│
+├───file/
+│   └───writer.py
 ├───comp_eval/
 │   └───pre_proc.py
-│
 └───multi_analysis/
     └───pca.py
 ```
