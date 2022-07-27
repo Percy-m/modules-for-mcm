@@ -8,10 +8,12 @@
 ```
 .
 ├───README.md
+├───fi/
+│   └───fitting.py ------------ 拟合
 ├───file/
-│   └───writer.py
+│   └───writer.py ------------- 写文件
 ├───comp_eval/
-│   └───pre_proc.py
+│   └───pre_proc.py ----------- 数据预处理
 └───multi_analysis/
-    └───pca.py
+    └───pca.py ---------------- 主成分分析
 ```
