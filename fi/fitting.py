@@ -8,26 +8,36 @@ from scipy import optimize
 import numpy as np
 
 
-def poly_fit_plot(x: Union[np.ndarray, Iterable, int, float],
-                  y: Union[np.ndarray, Iterable, int, float],
-                  mode: int,
-                  deg: int = None,
-                  func: Callable = None,
-                  draw=True,
-                  data_label: str = None,
-                  fit_label: str = None,
-                  pic_name='a.png'):
+def fit_plot(x: Union[np.ndarray, Iterable, int, float],
+             y: Union[np.ndarray, Iterable, int, float],
+             mode: int,
+             deg: int = None,
+             func: Callable = None,
+             draw=True,
+             data_label: str = None,
+             fit_label: str = None,
+             pic_name='a.png'):
     """
-    多项式拟合， 并画出原数据散点图与拟合曲线
+    多项式/曲线拟合， 并画出原数据散点图与拟合曲线
 
     示例
     ----
     >>> x_ = np.array([1, 2, 3, 4, 5])
     >>> y_ = np.array([2, 4, 4, 5, 6])
-    >>> c, r_squared = poly_fit_plot(x_, y_, deg=1,
+    >>> coe, r_squared = fit_plot(x_, y_,
+    ... mode=0,
+    ... deg=1,
     ... data_label='原数据',
     ... fit_label='拟合曲线',
     ... pic_name='一次拟合.png')
+
+    >>> def foo(x_, a, b, c):
+    ...     return a * np.exp(-b * x_) + c
+    ...
+    >>> coe, r_squared = fit_plot(x_, y_,
+    ... mode=1,
+    ... func=foo,
+    ... draw=False)
 
     :param x: 自变量
     :param y: 因变量
@@ -70,9 +80,10 @@ def poly_fit_plot(x: Union[np.ndarray, Iterable, int, float],
 if __name__ == '__main__':
     x_1 = np.array([0, 1, 2, 3, 4])
     y_1 = np.array([2, 4, 5, 8, 10])
-    print(poly_fit_plot(x_1, y_1,
-                        deg=1,
-                        data_label='原数据',
-                        fit_label='拟合曲线',
-                        pic_name=r"C:\Users\ANO4679\Desktop\a.png"))
+    print(fit_plot(x_1, y_1,
+                   mode=0,
+                   deg=1,
+                   data_label='原数据',
+                   fit_label='拟合曲线',
+                   pic_name=r"C:\Users\ANO4679\Desktop\a.png"))
     pass
