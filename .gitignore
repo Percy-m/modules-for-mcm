@@ -251,7 +251,7 @@ orleans.codegen.cs
 # RIA/Silverlight projects
 Generated_Code/
 
-# Backup & report files from converting an old project file
+# Backup & report files from converting an old project io
 # to a newer Visual Studio version. Backup files are not needed,
 # because we have git ;-)
 _UpgradeReport_Files/
@@ -278,7 +278,7 @@ ServiceFabricBackup/
 # Microsoft Fakes
 FakesAssemblies/
 
-# GhostDoc plugin setting file
+# GhostDoc plugin setting io
 *.GhostDoc.xml
 
 # Node.js Tools for Visual Studio
@@ -288,10 +288,10 @@ node_modules/
 # Visual Studio 6 build log
 *.plg
 
-# Visual Studio 6 workspace options file
+# Visual Studio 6 workspace options io
 *.opt
 
-# Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
+# Visual Studio 6 auto-generated workspace io (contains which files were open etc.)
 *.vbw
 
 # Visual Studio LightSwitch build output
@@ -323,7 +323,7 @@ __pycache__/
 # Tabs Studio
 *.tss
 
-# Telerik's JustMock configuration file
+# Telerik's JustMock configuration io
 *.jmconfig
 
 # BizTalk build output
@@ -341,7 +341,7 @@ ASALocalRun/
 # MSBuild Binary and Structured Log
 *.binlog
 
-# NVidia Nsight GPU debugger configuration file
+# NVidia Nsight GPU debugger configuration io
 *.nvuser
 
 # MFractors (Xamarin productivity tool) working folder
