@@ -2,6 +2,8 @@
 author: Jiayi Zhu
 """
 from enum import Enum
+
+import pandas
 from openpyxl import *
 
 
@@ -30,21 +32,28 @@ def write_excel(data, filepath: str,
 
     ws = wb.create_sheet(sheet_name, sheet_index)
 
+    t = 1
     if header is not None:
         ws.append(header)
+        t = 2
     if mode == Mode.row:
         for r in data:
             ws.append(r)
     if mode == Mode.col:
         for i in range(len(data)):
             for j in range(len(data[i])):
-                ws.cell(j + 1, i + 1, data[i][j])
+                ws.cell(j + t, i + 1, data[i][j])
     wb.save(filepath)
     wb.close()
 
 
 if __name__ == '__main__':
     p = r"a.xlsx"
-    d = [2, 3]
-    write_excel((d,), p, 's2')
-
+    d = [
+        [2, 3, 4, 5],
+        ['a', 'b', 'c', 'd']
+    ]
+    header_ = ['A', 'B']
+    write_excel(d, p, 's1', header=header_, mode=Mode.col)
+    c = pandas.read_excel(p, sheet_name='s1')
+    print(c)
