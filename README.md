@@ -15,8 +15,7 @@
 │   └───fitting.py ------------ 拟合
 ├───file_io/
 │   └───writer.py ------------- 写文件
-├───multi_analysis/
-│   └───pca.py ---------------- 主成分分析
-└───regre_analysis/
+└───multi_analysis/
+    └───pca.py ---------------- 主成分分析
     
 ```
