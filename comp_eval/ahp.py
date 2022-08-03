@@ -26,15 +26,17 @@ RI = [
 def mat_cr(mat_a):
     """
     计算一致性比率
+
+    输入判断矩阵的阶数应在 3~15 之间
     :param mat_a:
     :return:
     """
     l_a, _ = eigs(mat_a, 1)
     len_ = len(mat_a)
-    if len_ > 2:
-        cr_a = (l_a - len_)/len_ - 1/RI[len_]
+    if 15 >= len_ > 2:
+        cr_a = (l_a - len_)/len_ - 1/RI[len_ - 1]
     else:
-        cr_a = 0
+        raise NotImplemented
     return cr_a
 
 
