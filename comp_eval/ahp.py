@@ -38,7 +38,7 @@ def mat_cr(mat_a: np.ndarray):
         cr_a = (l_a - len_)/(len_ - 1)/RI[len_ - 1]
     else:
         raise NotImplemented
-    return cr_a
+    return np.real(cr_a)[0]
 
 
 def max_lambda(mat_a: np.ndarray):
@@ -65,26 +65,11 @@ def weight_vec(mat_a: np.ndarray):
     for i in range(len(lambda_)):
         if lambda_[i] == np.max(lambda_):
             v = vec_[i]
-    return v/sum(v)
+    return np.real(v/sum(v))
 
 
 if __name__ == '__main__':
-    a = [
-        [  1,   7,   5, 1/3,   5,   3,   1,   7,   5,   5,   1,   6],
-        [1/7,   1, 1/3, 1/5, 1/2, 1/4, 1/6,   1, 1/2, 1/2, 1/6,   1],
-        [1/5,   3,   1, 1/5,   1, 1/2, 1/4,   2,   1,   1, 1/4,   2],
-        [  3,   5,   5,   1,   5,   3,   1,   7,   5,   5,   1,   6],
-        [1/5,   2,   1, 1/5,   1, 1/2, 1/4, 1/2,   1,   1, 1/4, 1/2],
-        [1/3,   4,   4, 1/3,   2,   1, 1/2,   4,   2,   2, 1/2,   3],
-        [  1,   6,   4,   1,   4,   2,   1,   6,   4,   4,   1,   5],
-        [1/7,   1, 1/2, 1/7,   2, 1/4, 1/6,   1, 1/2, 1/2, 1/6, 1/2],
-        [1/5,   2,   1, 1/5,   1, 1/2, 1/4,   2,   1,   1, 1/4,   2],
-        [1/5,   2,   1, 1/5,   1, 1/2, 1/4,   2,   1,   1, 1/4,   2],
-        [  1,   6,   4,   1,   4,   2,   1,   6,   4,   4,   1,   5],
-        [1/6,   1, 1/2, 1/6,   2, 1/3, 1/5,   2, 1/2, 1/5, 1/5,   1]
-    ]
-    d = np.array(a)
-    l_a_, _ = eigs(d, 1)
+
     # print(l_a_)
     # print(len(d))
     # print(mat_cr(d))
